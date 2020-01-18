@@ -1,6 +1,7 @@
 import React from "react";
 import EffectHook from "./Examples/Hooks/Effect";
-import ReducerExample from "./Examples/Hooks/Reducer";
+import ReducerHook from "./Examples/Hooks/Reducer";
+import StateHook from "./Examples/Hooks/State";
 
 export default function App() {
   return (
@@ -10,7 +11,9 @@ export default function App() {
       <h3>useEffect</h3>
       <EffectHook />
       <h3>useReducer</h3>
-      <ReducerExample />
+      <ReducerHook />
+      <h3>useState</h3>
+      <StateHook />
     </>
   );
 }
