@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const State = () => {
-  const initValue = Math.floor(Math.random() * 10);
+const useCounter = initValue => {
   const [count, setCount] = useState(initValue);
   const [actionCount, setActionCount] = useState(0);
 
@@ -9,6 +8,13 @@ const State = () => {
     setCount(value);
     setActionCount(actionCount + 1);
   };
+
+  return [count, updateCount, actionCount];
+};
+
+const Custom = () => {
+  const initValue = Math.floor(Math.random() * 10);
+  const [count, updateCount, actionCount] = useCounter(initValue);
 
   const handleClickInc = () => updateCount(count + 1);
   const handleClickDec = () => updateCount(count - 1);
@@ -23,4 +29,4 @@ const State = () => {
   );
 };
 
-export default State;
+export default Custom;

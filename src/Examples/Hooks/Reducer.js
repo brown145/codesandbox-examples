@@ -30,7 +30,7 @@ const reducer = (state, action) => {
   };
 };
 
-const Effect = () => {
+const Reducer = () => {
   const initValue = Math.floor(Math.random() * 10);
   const [state, dispatch] = useReducer(reducer, { count: initValue }, init);
 
@@ -47,4 +47,4 @@ const Effect = () => {
   );
 };
 
-export default Effect;
+export default Reducer;
