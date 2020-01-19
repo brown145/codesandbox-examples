@@ -1,17 +1,15 @@
-import React, { useState } from "react";
-import withEvenInitValue from "./withEvenInitValue";
+import React from "react";
+import withCounter from "./withCounter";
 
-const Component = ({ initValue = 0 }) => {
-  const [count, setCount] = useState(initValue);
-  const [actionCount, setActionCount] = useState(0);
+const initValue = Math.floor(Math.random() * 10);
 
-  const updateCount = value => {
-    setCount(value);
-    setActionCount(actionCount + 1);
-  };
-
-  const handleClickInc = () => updateCount(count + 1);
-  const handleClickDec = () => updateCount(count - 1);
+const Component = ({
+  count = 0,
+  actionCount = 0,
+  onUpdateCount = () => {}
+}) => {
+  const handleClickInc = () => onUpdateCount(count + 1);
+  const handleClickDec = () => onUpdateCount(count - 1);
 
   return (
     <>
@@ -24,4 +22,4 @@ const Component = ({ initValue = 0 }) => {
 };
 
 export const naked = Component;
-export default withEvenInitValue(Component);
+export default withCounter(initValue)(Component);
