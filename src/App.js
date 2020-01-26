@@ -17,6 +17,7 @@ import SubComponent from "./Examples/CodeStructure/ConditionalElements/SubCompon
 import HookForChild from "./Examples/CodeStructure/HookForChild/Component";
 import Context from "./Examples/StateMgmt/Context/Component";
 import SimpleContext from "./Examples/StateMgmt/SimpleContext/Component";
+import Redux from "./Examples/StateMgmt/Redux/Component";
 
 export default function App() {
   return (
@@ -28,6 +29,9 @@ export default function App() {
       <SimpleContext />
       <h3>Context</h3>
       <Context />
+
+      <h2>Redux</h2>
+      <Redux />
 
       <h2>Conditional Render</h2>
       <h3>Logical And</h3>
